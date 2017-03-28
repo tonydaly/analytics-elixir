@@ -12,12 +12,9 @@ defmodule Segment.Analytics.Http do
     request(:post, url, body, headers, options_with_auth)
   end
 
-  def process_options(options) do
-    Dict.put(options, :basic_auth, {Segment.write_key(),""})
-  end
-
   def process_request_headers(headers) do
-      Dict.put(headers, :"Content-Type", "application/json")
-      |> Dict.put(:"accept", "application/json")
+    headers ++ [
+      {"Content-Type", "application/json"}
+    ]
   end
 end
