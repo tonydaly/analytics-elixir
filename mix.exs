@@ -5,9 +5,9 @@ defmodule AnalyticsElixir.Mixfile do
     [app: :segment,
      version: "0.1.1",
      elixir: "~> 1.0",
-     deps: deps,
+     deps: deps(),
      description: "analytics_elixir",
-     package: package]
+     package: package()]
   end
 
   # Configuration for the OTP application
