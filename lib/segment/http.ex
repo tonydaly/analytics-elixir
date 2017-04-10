@@ -13,8 +13,6 @@ defmodule Segment.Analytics.Http do
   end
 
   def process_request_headers(headers) do
-    headers ++ [
-      {"Content-Type", "application/json"}
-    ]
+    [{"content-type", "application/json"} | headers]
   end
 end
